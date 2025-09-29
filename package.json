@@ -1,13 +1,18 @@
 {
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "cross-env": "^10.0.0",
     "postcss": "^8.5.6",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.17"
   },
   "scripts": {
-    "build:css": "tailwindcss -i ./workzone/static/css/styles.css -o ./workzone/static/css/output.css",
+    "build:css": "tailwindcss -i ./workzone/static/css/styles.css -o ./workzone/static/css/output.css --minify",
     "watch:css": "tailwindcss -i ./workzone/static/css/styles.css -o ./workzone/static/css/output.css --watch",
     "dev": "npm run watch:css",
-    "start": "npm run build:css"
+    "prod:build": "npm run build:css"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
