@@ -1,20 +1,15 @@
 #!/usr/bin/env bash
-# exit on error
-set -o errexit
+# Exit on error
+set -e
 
-echo "💻 Upgrading pip and installing Python dependencies..."
-python -m pip install --upgrade pip
+# Install Python dependencies
 pip install -r requirements.txt
 
-echo "📦 Installing Node dependencies..."
+# Install NPM dependencies
 npm install
 
-echo "🎨 Building Tailwind CSS..."
-export NODE_ENV=production
-npm run build:css
+# Build Tailwind / Vite assets
+npm run build
 
-echo "🗂 Collecting static files..."
-python manage.py collectstatic --no-input --clear
-
-echo "🛠 Applying migrations..."
-python manage.py migrate
+# Collect Django static files
+python manage.py collectstatic --no-input
