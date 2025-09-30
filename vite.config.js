@@ -2,11 +2,9 @@ export default {
   build: {
     outDir: 'static/dist',
     rollupOptions: {
-      input: 'static/main.js',
+      input: 'static/input.css',  // Process your CSS file
       output: {
-        entryFileNames: 'assets/main.js',
-        chunkFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name].[ext]',
+        assetFileNames: 'css/tailwind.css'  // Output to clean path
       },
     },
   },
