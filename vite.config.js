@@ -1,11 +1,16 @@
-export default {
+import { defineConfig } from 'vite'
+
+export default defineConfig({
   build: {
     outDir: 'static/dist',
     rollupOptions: {
-      input: 'static/input.css',  // Process your CSS file
+      input: {
+        // Make sure this points to your CSS file
+        main: 'static/input.css'
+      },
       output: {
-        assetFileNames: 'css/tailwind.css'  // Output to clean path
+        assetFileNames: 'css/tailwind.css'
       },
     },
   },
-}
+})

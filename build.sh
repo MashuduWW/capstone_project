@@ -1,15 +1,14 @@
-#!/usr/bin/env bash
-# Exit on error
-set -e
+#!/bin/bash
 
-# Install Python dependencies
+# Install dependencies
 pip install -r requirements.txt
-
-# Install NPM dependencies
 npm install
 
-# Build Tailwind / Vite assets
+# Build Tailwind CSS (using the CLI approach that works)
 npm run build
 
-# Collect Django static files
-python manage.py collectstatic --no-input
+# Collect static files
+python manage.py collectstatic --noinput
+
+# Run migrations
+python manage.py migrate

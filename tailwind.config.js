@@ -1,11 +1,10 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./templates/**/*.html",
-    "./static/**/*.js",
-    // Add other template directories if needed
-    "./capstone_project/templates/**/*.html",
-    "./**/*.html" // This might be too broad, but catches everything
+    "./templates/welcome.html",    // Your exact template file
+    "./templates/**/*.html",       // Any other templates
+    "./static/**/*.js",            // JS files
+    "./static/**/*.html"           // HTML in static (for test files)
   ],
   theme: {
     extend: {},
